@@ -7,6 +7,7 @@ import heart from "../assets/card-icon/heart.svg"
 import view from "../assets/card-icon/view.svg"
 import star from "../assets/card-icon/star.svg"
 import cStar from "../assets/card-icon/color-star.svg"
+import { Link } from 'react-router-dom';
 
 function Card(props) {
   return (
@@ -46,6 +47,10 @@ function Card(props) {
   );
 }
 
+const pro = [
+  { name: 'View All', myPath: '/AllProducts' }
+];
+
 function Head(){
   return(
     <div className='beaich gap-2 h-60 w-[100%]'>
@@ -59,7 +64,14 @@ function Head(){
         <div className='float-left'>
         <p className='text-4xl font-semibold mt-8'>Best selling product</p>
         </div>
-        <button className='bg-red-600 text-white ml-[580px] w-40 h-12 rounded'>All View</button>
+        {pro.map((item, index) => (
+          <button
+            key={index}
+            className='bg-red-600 text-white w-[10%] h-8 font-semibold rounded'
+          >
+            <Link to={item.myPath}>{item.name}</Link>
+          </button>
+        ))}
       </div>
     </div>
   );

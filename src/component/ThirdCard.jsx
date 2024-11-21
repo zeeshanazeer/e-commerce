@@ -11,6 +11,7 @@ import heart from "../assets/card-icon/heart.svg"
 import view from "../assets/card-icon/view.svg"
 import star from "../assets/card-icon/star.svg"
 import cStar from "../assets/card-icon/color-star.svg"
+import { Link } from 'react-router-dom';
 
 function Nav(){
     return(
@@ -67,6 +68,10 @@ function Card(props){
     )
 }
 
+const pro = [
+  { name: 'View All Products', myPath: '/AllProducts' }
+];
+
 function ThirdCard() {
   return (
     <>
@@ -103,7 +108,14 @@ function ThirdCard() {
         
       </div>
       <div className='beaich my-8'>
-      <button className='w-44 h-14 bg-red-600 text-white'>View All Products</button>
+      {pro.map((item, index) => (
+          <button
+            key={index}
+            className='bg-red-600 text-white w-[20%] h-12 font-semibold rounded'
+          >
+            <Link to={item.myPath}>{item.name}</Link>
+          </button>
+        ))}
       </div>
       
     </>

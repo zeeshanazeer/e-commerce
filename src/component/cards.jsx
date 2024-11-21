@@ -7,6 +7,7 @@ import heart from "../assets/card-icon/heart.svg"
 import view from "../assets/card-icon/view.svg"
 import star from "../assets/card-icon/star.svg"
 import cStar from "../assets/card-icon/color-star.svg"
+import { Link } from 'react-router-dom';
 
 // const cardArr= [
 //   {img:{key},
@@ -75,15 +76,29 @@ function Time(){
   );
 }
 
-function Button(){
-  return(
+
+
+function Button() {
+  const pro = [
+    { name: 'View All Products', myPath: '/AllProducts' }
+  ];
+
+  return (
     <>
-      <div className='beaich p-14 border-b-2 '>
-        <button className='bg-red-600 text-white w-[20%] h-12 font-semibold rounded'>View All Products</button>
+      <div className='beaich p-14 border-b-2'>
+        {pro.map((item, index) => (
+          <button
+            key={index}
+            className='bg-red-600 text-white w-[20%] h-12 font-semibold rounded'
+          >
+            <Link to={item.myPath}>{item.name}</Link>
+          </button>
+        ))}
       </div>
     </>
-  )
+  );
 }
+
 
 export default function AddCard(){
   return(

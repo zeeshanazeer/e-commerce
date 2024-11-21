@@ -21,7 +21,7 @@ export default function Header() {
       <div className=''>
         <ul className='ml-24 mr-10 mt-2'>
           {Nev.map((item) => (
-          <li className='inline m-1 ml-3 hover:border-b-2 hover:text-gray-500 w-[75px] h-10'>
+          <li className='inline m-1 ml-3 hover:border-b-2 hover:text-gray-500 active:text-gray-500 w-[75px] h-10'>
            <Link to={item.myPath}>{item.name}</Link> 
           </li>
           ))}
