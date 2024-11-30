@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import bord from "../assets/card-img/bord.png"
 import key from "../assets/card-img/key.png"
 import chair from "../assets/card-img/chair.png"
@@ -17,18 +17,28 @@ import { Link } from 'react-router-dom';
 // }
 // ];
 
-function Card(props) {
+function Card({
+  off,
+  image,
+  del,
+  name,
+  price,
+  id,
+  value,
+
+}) {
     return (
+      <Link id={id} to={`/ProductDitail/${id}`}>
       <div className="group mt-6 gap-2 flex flex-col relative w-64 h-[350px]  justify-between">
         <div>
         </div>
         <div className=' bg-[#F5F5F5] w-64 h-60'>
-        {props.off && <div className="discount absolute top-3 left-3 bg-red-600 w-14 h-6 rounded flex items-center text-xs justify-center text-white ">
-          {props.off}
+        {off && <div className="discount absolute top-3 left-3 bg-red-600 w-14 h-6 rounded flex items-center text-xs justify-center text-white ">
+          {off}
         </div>}
         <div className="flex">
           <img 
-            src={props.image}
+            src={image}
             alt="product img"
             className="m-auto group-hover:scale-110 transition-all duration-300 mt-10"
           />
@@ -40,15 +50,16 @@ function Card(props) {
         <div className='bg-white left-3'>
         <button className=' group-hover:bg-black text-white bg-white  hover:text-[#F5F5F5] h-10 w-[250px] font-medium text-lg'>Add</button>
         <h3 className="font-medium group-hover:text-primary transition-all duration-300 m-0">
-          {props.name}
+          {name}
         </h3>
   
         <p className='m-0'>
-          <span className='text-red-600'>{props.price}</span> <span className='line-through'>{props.del}</span>
+          <span className='text-red-600'>{price}</span> <span className='line-through'>{del}</span>
         </p>
-       <p className='m-0 '><img src={cStar} alt="" className='inline-block'/><img src={cStar} alt="" className='inline-block'/><img src={cStar} alt="" className='inline-block'/><img src={cStar} alt="" className='inline-block'/><img src={star} alt="" className='inline-block' />{props.value}</p>
+       <p className='m-0 '><img src={cStar} alt="" className='inline-block'/><img src={cStar} alt="" className='inline-block'/><img src={cStar} alt="" className='inline-block'/><img src={cStar} alt="" className='inline-block'/><img src={star} alt="" className='inline-block' />{value}</p>
         </div>
       </div>
+      </Link>
     );
   }
 
@@ -99,26 +110,53 @@ function Button() {
   );
 }
 
+function AddCard() {
+  const API_KEY = 'https://dummyjson.com/products?limit=4&skip=100'; // Your API endpoint
+  const [products, setProducts] = useState([]); // Initialize as an empty array instead of null
 
-export default function AddCard(){
-  return(
-    <>
+  // Fetch products
+  const getProductDeta = async () => {
+      try {
+          const response = await axios.get(API_KEY); // Use axios.get for fetching
+          console.log("response", response.data.products);
+          setProducts(response?.data?.products); // Set products from response
+      } catch (error) {
+          console.error("Error fetching products:", error);
+      }
+  };
+
+  useEffect(() => {
+      getProductDeta(); // Fetch product data when component mounts
+  }, []); // Empty dependency array to run only once
+
+  console.log(products);
+
+  return (
+      <>
       <Time/>
-      <div className='flex gap-3 beaich'>
-      <div className='inline-block w-1/5'>
-          <Card image={bord} name="HAVIT HV-G92 Gamepad" value="(88)" price="$120" del="$160" off='-40%' />
-        </div>
-        <div className='inline-block w-1/5'>
-          <Card image={screen} name="AK-900 Wired Keyboard" value="(75)" price="$960" del="$1160" off='-35%' />
-        </div>
-        <div className='inline-block w-1/5'>
-          <Card image={key} name="IPS LCD Gaming Monitor" value="(99)" price="$370" del="$400" off='-30%' />
-        </div>
-        <div className='inline-block w-1/5'>
-          <Card image={chair} name="S-Series Comfort Chair" value="(99)" price="$375" del="$400" off='-25%' />
-        </div>
+      <div className=' flex justify-center items-center'>
+      <div className='w-[90%] gap-4 justify-center my-14 flex flex-wrap' >
+              {products.map((item) => {
+                  let discountPrice= Math.ceil(item.price-(item.discountPercentage)*(item.price/100)).toFixed(2)
+                  return (
+                  <>
+                  <Card off={`${item.discountPercentage}%`}
+                  image={item.thumbnail}
+                  id={item.id}
+                  price={`$${discountPrice}`}
+                  del={`$${item.price.toFixed(2)}`}
+                  name={item.title}
+                  
+                  />
+                  </>
+                  );
+              })}
+      </div>
       </div>
       <Button/>
-    </>
+      </>
   );
 }
+
+export default AddCard;
+

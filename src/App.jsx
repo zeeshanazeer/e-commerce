@@ -9,7 +9,11 @@ import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Login from './Pages/Login';
 import Footer from './component/Footer';
-import Products from './Pages/Products';
+import AddToCard from './Pages/AddCard';
+import Product from './Pages/Product';
+import CardTotal from './Pages/CardTotal';
+import ProductDitail from './Pages/ProductDitail';
+// import Products from './Pages/Products';
 
 export default function App() {
   const [card, setCard] = useState();
@@ -22,7 +26,11 @@ export default function App() {
         <Route path='/About' element={<About />} />
         <Route path='/Contact' element={<Contact/>} />
         <Route path='/Login' element={<Login/>} />
-        <Route path='/AllProducts' element={<Products/>}/>
+        <Route path='/Products' element={<Product/>}/>
+        <Route path='/ProductDitail/:id' element={<ProductDitail/>}/>
+        <Route path='/AddCard' element={<AddToCard/>}/>
+        <Route path='/CardTotal' element={<CardTotal/>}/>
+        CardTotal
       </Routes>
       <Footer/>
     </>

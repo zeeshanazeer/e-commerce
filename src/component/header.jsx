@@ -8,7 +8,7 @@ import { FaRegHeart } from "react-icons/fa";
 
 
 
-const Nev= [{name:'Home',myPath:"/"},{name:'About',myPath:"/About"},{name:'Contact Us',myPath:"/Contact"},{name:'Login', myPath:"/Login"},{name:'Products', myPath:"/AllProducts"}];
+const Nev= [{name:'Home',myPath:"/"},{name:'About',myPath:"/About"},{name:'Contact Us',myPath:"/Contact"},{name:'Login', myPath:"/Login"},{name:'Products', myPath:"/Products"}];
 export default function Header() {
   const login = false;
   return (

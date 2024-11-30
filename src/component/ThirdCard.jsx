@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import dfood from "../assets/card-img/Dfood.png"
 import shooz from "../assets/card-img/shooz.png"
 import gjekit from "../assets/card-img/Gjekit.png"
@@ -73,40 +73,47 @@ const pro = [
 ];
 
 function ThirdCard() {
+  const API_KEY = 'https://dummyjson.com/products?limit=8&skip=108'; // Your API endpoint
+    const [products, setProducts] = useState([]); // Initialize as an empty array instead of null
+
+    // Fetch products
+    const getProductDeta = async () => {
+        try {
+            const response = await axios.get(API_KEY); // Use axios.get for fetching
+            console.log("response", response.data.products);
+            setProducts(response?.data?.products); // Set products from response
+        } catch (error) {
+            console.error("Error fetching products:", error);
+        }
+    };
+
+    useEffect(() => {
+        getProductDeta(); // Fetch product data when component mounts
+    }, []);
   return (
     <>
-
     <div className='flex flex-wrap gap-3 beaich'>
         <Nav/>
       {/* Row 3 */}
-      <div className='inline-block w-1/5'>
-          <Card image={dfood} name="HAVIT HV-G92 Gamepad" value="(88)" price="$120" del="$160" />
+      <div className=' flex justify-center items-center'>
+        <div className='w-[90%] gap-4 justify-center my-14 flex flex-wrap' >
+                {products.map((item) => {
+                    let discountPrice= Math.ceil(item.price-(item.discountPercentage)*(item.price/100)).toFixed(2)
+                    return (
+                    <>
+                    <Card off={`${item.discountPercentage}%`}
+                    image={item.thumbnail}
+                    price={`$${discountPrice}`}
+                    del={`$${item.price.toFixed(2)}`}
+                    name={item.title}
+                    
+                    />
+                    </>
+                    );
+                })}
         </div>
-        <div className='inline-block w-1/5'>
-          <Card image={shooz} name="AK-900 Wired Keyboard" value="(75)" price="$960" del="$1160" />
         </div>
-        <div className='inline-block w-1/5'>
-          <Card image={laptop} name="IPS LCD Gaming Monitor" value="(99)" price="$370" del="$400" />
         </div>
-        <div className='inline-block w-1/5'>
-          <Card image={remont} name="S-Series Comfort Chair" value="(99)" price="$375" del="$400" />
-        </div>
-
-        {/* Row 4 */}
-        <div className='inline-block w-1/5'>
-          <Card image={soodkas} name="HAVIT HV-G92 Gamepad" value="(88)" price="$120" del="$160" />
-        </div>
-        <div className='inline-block w-1/5'>
-          <Card image={gjekit} name="AK-900 Wired Keyboard" value="(75)" price="$960" del="$1160" />
-        </div>
-        <div className='inline-block w-1/5'>
-          <Card image={toicar} name="IPS LCD Gaming Monitor" value="(99)" price="$370" del="$400" />
-        </div>
-        <div className='inline-block w-1/5'>
-          <Card image={ispiker} name="S-Series Comfort Chair" value="(99)" price="$375" del="$400" />
-        </div>
-        
-      </div>
       <div className='beaich my-8'>
       {pro.map((item, index) => (
           <button
@@ -119,7 +126,7 @@ function ThirdCard() {
       </div>
       
     </>
-  )
+  );
 }
 
 export default ThirdCard

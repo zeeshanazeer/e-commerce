@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import facewash from "../assets/card-img/facewash.png"
 import Bjekit from "../assets/card-img/Bjekit.png"
 import camera from "../assets/card-img/camera.png"
@@ -78,21 +78,44 @@ function Head(){
 }
 
 export default function Seacond() {
+  const API_KEY = 'https://dummyjson.com/products?limit=4&skip=104'; // Your API endpoint
+    const [products, setProducts] = useState([]); // Initialize as an empty array instead of null
+
+    // Fetch products
+    const getProductDeta = async () => {
+        try {
+            const response = await axios.get(API_KEY); // Use axios.get for fetching
+            console.log("response", response.data.products);
+            setProducts(response?.data?.products); // Set products from response
+        } catch (error) {
+            console.error("Error fetching products:", error);
+        }
+    };
+
+    useEffect(() => {
+        getProductDeta(); // Fetch product data when component mounts
+    }, []);
   return (
-    <div className='flex flex-wrap gap-3 beaich'>
+    <div className=''>
       <Head/>
-      <div className='inline-block w-1/5'>
-        <Card image={facewash} name="Curology Product Set" value="(145)" price="$500" del=""/>
-      </div>
-      <div className='inline-block w-1/5'>
-        <Card image={Bjekit} name="Quilted Satin Jacket" value="(55)" price="$660"/>
-      </div>
-      <div className='inline-block w-1/5'>
-        <Card image={gperse} name="Gucci duffle bag" value="(95)" price="$960" del="$1160" off="10% OFF" />
-      </div>
-      <div className='inline-block w-1/5'>
-        <Card image={camera} name="CANON EOS DSLR Camera" value="(95)" price="$360" del=""/>
-      </div>
+        <div className=' flex justify-center items-center'>
+        <div className='w-[90%] gap-4 justify-center my-14 flex flex-wrap' >
+                {products.map((item) => {
+                    let discountPrice= Math.ceil(item.price-(item.discountPercentage)*(item.price/100)).toFixed(2)
+                    return (
+                    <>
+                    <Card off={`${item.discountPercentage}%`}
+                    image={item.thumbnail}
+                    price={`$${discountPrice}`}
+                    del={`$${item.price.toFixed(2)}`}
+                    name={item.title}
+                    
+                    />
+                    </>
+                    );
+                })}
+        </div>
+        </div>
     </div>
   );
 }
