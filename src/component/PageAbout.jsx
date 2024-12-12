@@ -59,7 +59,7 @@ function PageAbout() {
       communicate. We help organizations of all size humanize their
       communications and personalize their customer experiences."
       tit="Helping Businesses Succeed throught the power of video."
-      btn="Sign Up for Free"/>
+      btn="Login for Free"/>
     </div>
     </div>
   )

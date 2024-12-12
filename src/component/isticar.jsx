@@ -10,7 +10,7 @@ function Ist(){
                             <button className='text-white hover:text-green-400 hover:font-semibold  mt-10 mb-5'>Categories</button>
                         </div>
                         <span className='text-white text-5xl font-semibold mt-10'>Enhance Your<br/> Music Experience</span>
-                        <div className='mt-8 mb-5 h-10 w-[80%]'>
+                        <div className='mt-8 mb-5 h-10 w-[80%] text-black'>
                             <p className='text-xs inline float-left font-medium m-2 bg-white rounded-full w-16 h-16 p-3'><span className='block text-2xl font-bold'>03</span>Day's</p>
                             <p className='text-xs inline float-left font-medium m-2 bg-white rounded-full w-16 h-16 p-3'><span className='block text-2xl font-bold'>23</span>Hours</p>
                             <p className='text-xs inline float-left font-medium m-2 bg-white rounded-full w-16 h-16 p-3'><span className='block text-2xl font-bold'>19</span>Minute</p>

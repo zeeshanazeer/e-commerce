@@ -12,7 +12,8 @@ import Footer from './component/Footer';
 import AddToCard from './Pages/AddCard';
 import Product from './Pages/Product';
 import CardTotal from './Pages/CardTotal';
-import ProductDitail from './Pages/ProductDitail';
+import CardDitail from './component/CardDitail';
+import AddProduct from './Pages/AddProduct';
 // import Products from './Pages/Products';
 
 export default function App() {
@@ -27,10 +28,10 @@ export default function App() {
         <Route path='/Contact' element={<Contact/>} />
         <Route path='/Login' element={<Login/>} />
         <Route path='/Products' element={<Product/>}/>
-        <Route path='/ProductDitail/:id' element={<ProductDitail/>}/>
+        <Route path='/ProductDitail/:id' element={<CardDitail/>}/>
         <Route path='/AddCard' element={<AddToCard/>}/>
         <Route path='/CardTotal' element={<CardTotal/>}/>
-        CardTotal
+        <Route path='/AddProduct' element={<AddProduct/>}/>
       </Routes>
       <Footer/>
     </>

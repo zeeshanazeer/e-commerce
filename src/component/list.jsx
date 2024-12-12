@@ -30,8 +30,8 @@ function Head(){
 function Card( props){
     return(
         <>
-            <div className='gap-3 w-[13%]'>
-                <div className='w-[100%] h-32 border-2 float-left '>
+            <div className=' w-[150px] mx-auto max-w-7xl sm:px-6 lg:px-8'>
+                <div className='w-[130px] h-32 border-2 '>
                     <div  className='w-[80%] h-16 beaich ml-3 mt-4'>
                          <img src={props.image} alt=""/>
                     </div>
@@ -48,7 +48,7 @@ export default function List() {
   return (
     <>
         <Head/>
-        <div className='gap-5 beaich pb-12 border-b-2'>
+        <div className='gap-5 beaich pb-12 border-b-2 w-[100%] mr-5'>
             <Card image={phone} name="Phone"/>
             <Card image={watch} name="Smart-Watch"/>
             <Card image={headphone} name="Head-Phone"/>

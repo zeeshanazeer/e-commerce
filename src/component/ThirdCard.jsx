@@ -12,6 +12,7 @@ import view from "../assets/card-icon/view.svg"
 import star from "../assets/card-icon/star.svg"
 import cStar from "../assets/card-icon/color-star.svg"
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux'
 
 function Nav(){
     return(
@@ -32,12 +33,13 @@ function Nav(){
 }
 
 function Card(props){
+  const darkMode = useSelector((state) => state.darkMode.darkMode);
     return(
         <>
-        <div className="group  gap-2 flex flex-col relative w-64 h-[350px] mb-10">
+        <div className={`${darkMode ? "bg-slate-800 text-white" : ""} group  gap-2 flex flex-col relative w-64 h-[350px] mb-10`}>
         <div>
         </div>
-        <div className=' bg-[#F5F5F5] w-64 h-60'>
+        <div className={`${darkMode ? 'bg-slate-800 text-white':''} bg-[#F5F5F5] w-64 h-60`}>
         {props.off && <div className="discount absolute top-3 left-3 bg-red-600 w-14 h-6 rounded flex items-center text-xs justify-center text-white ">
           {props.off}
         </div>}
@@ -52,8 +54,17 @@ function Card(props){
         
        
         </div>
-        <div className='bg-white left-3'>
-        <button className=' group-hover:bg-black text-white bg-white  hover:text-[#F5F5F5] h-10 w-[250px] font-medium text-lg'>Add</button>
+        <div className={`${darkMode ? "bg-slate-800 text-white" : ""}bg-white left-3`}>
+        <button 
+  className={`h-10 w-[250px] font-medium text-lg 
+    ${darkMode 
+      ? "group-hover:bg-black text-slate-800 bg-slate-800 group-hover:text-[#F5F5F5]" 
+      : "group-hover:bg-black  text-white bg-white group-hover:text-[#F5F5F5]"
+  }`}
+>
+  Add
+</button>
+
         <h3 className="font-medium group-hover:text-primary transition-all duration-300 m-0">
           {props.name}
         </h3>

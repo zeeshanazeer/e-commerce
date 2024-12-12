@@ -9,7 +9,7 @@ function AddAllCard({
     off,
     image,
     price,
-    name,
+    titlename,
     del,
     value,
     id,
@@ -38,7 +38,7 @@ function AddAllCard({
         <div className='bg-white left-3'>
         <button className=' group-hover:bg-black text-white bg-white  hover:text-[#F5F5F5] h-10 w-[250px] font-medium text-lg'>Add</button>
         <h3 className="font-medium group-hover:text-primary transition-all duration-300 m-0">
-          {name}
+          {titlename}
         </h3>
   
         <p className='m-0'>
