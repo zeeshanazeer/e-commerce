@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import useProducts from "../hooks/useProducts";
 
 function Product() {
-    const API_KEY = 'https://dummyjson.com/products?limit=52&skip=130'; // Your API endpoint
+    const API_KEY = 'https://dummyjson.com/products?limit=120'; // Your API endpoint
     const [product, setProducts] = useState([]); // Initialize as an empty array instead of null
 
     // Fetch products

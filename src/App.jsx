@@ -9,15 +9,17 @@ import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Login from './Pages/Login';
 import Footer from './component/Footer';
-import AddToCard from './Pages/AddCard';
 import Product from './Pages/Product';
-import CardTotal from './Pages/CardTotal';
+// import CardTotal from './Pages/CardTotal';
 import CardDitail from './component/CardDitail';
 import AddProduct from './Pages/AddProduct';
+import Search from './Pages/Search';
+import SignUp from './Pages/SignUp';
+import Profile from './Pages/Profile';
+import AddToCard from './Pages/AddToCard';
 // import Products from './Pages/Products';
 
 export default function App() {
-  const [card, setCard] = useState();
 
   return (
     <>
@@ -29,9 +31,12 @@ export default function App() {
         <Route path='/Login' element={<Login/>} />
         <Route path='/Products' element={<Product/>}/>
         <Route path='/ProductDitail/:id' element={<CardDitail/>}/>
-        <Route path='/AddCard' element={<AddToCard/>}/>
-        <Route path='/CardTotal' element={<CardTotal/>}/>
+        <Route path='/AddToCard' element={<AddToCard/>}/>
+        {/* <Route path='/CardTotal' element={<CardTotal/>}/> */}
         <Route path='/AddProduct' element={<AddProduct/>}/>
+        <Route path='/search' element={<Search/>}/>
+        <Route path='/SignUp' element={<SignUp/>}/>
+        <Route path='/Profile' element={<Profile/>}/>
       </Routes>
       <Footer/>
     </>
