@@ -1,12 +1,12 @@
-import React from 'react'
-import AddFullCard from '../component/allcard'
+// import React from 'react'
+// import AddFullCard from '../component/allcard'
 
-function Products() {
-  return (
-    <div>
-      <AddFullCard/>
-    </div>
-  )
-}
+// function Products() {
+//   return (
+//     <div>
+//       <AddFullCard/>
+//     </div>
+//   )
+// }
 
-export default Products
+// export default Products

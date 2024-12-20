@@ -1,8 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import facewash from "../assets/card-img/facewash.png"
-import Bjekit from "../assets/card-img/Bjekit.png"
-import camera from "../assets/card-img/camera.png"
-import gperse from "../assets/card-img/Gparse.png"
 import heart from "../assets/card-icon/heart.svg"
 import view from "../assets/card-icon/view.svg"
 import star from "../assets/card-icon/star.svg"
@@ -58,7 +54,7 @@ function Card(props) {
 }
 
 const pro = [
-  { name: 'View All', myPath: '/AllProducts' }
+  { name: 'View All', myPath: '/Products' }
 ];
 
 function Head(){

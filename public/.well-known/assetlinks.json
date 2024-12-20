@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "zeeshan_e_commerce.twa",
+        "sha256_cert_fingerprints": ["45:09:CA:97:47:E3:C6:F8:F6:21:68:D9:F9:E3:D1:BC:74:4C:36:54:CA:51:66:B9:C9:4E:3C:F7:38:75:2A:DD"]
+      }
+    }]

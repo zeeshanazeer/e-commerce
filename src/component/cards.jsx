@@ -87,7 +87,7 @@ function Time() {
 // Button Component
 function Button() {
   const pro = [
-    { name: 'View All Products', myPath: '/AllProducts' }
+    { name: 'View All Products', myPath: '/Products' }
   ];
 
   return (

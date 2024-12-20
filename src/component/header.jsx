@@ -1,291 +1,3 @@
-// import React from 'react'
-// import { IoSearchSharp } from "react-icons/io5";
-// import { CgProfile } from "react-icons/cg";
-// import { Link } from 'react-router-dom';
-// import { MdOutlineShoppingCart } from "react-icons/md";
-// import { FaRegHeart } from "react-icons/fa";
-// import { BsMoonStarsFill } from "react-icons/bs";
-// import { IoSunnyOutline } from "react-icons/io5";
-// import { useDispatch, useSelector } from "react-redux";
-// import { toggleDarkMode } from "../store/darkModeSlice";
-
-
-
-
-// const Nev= [{name:'Home',myPath:"/"},{name:'About',myPath:"/About"},{name:'Contact Us',myPath:"/Contact"},{name:'Login', myPath:"/Login"},{name:'Products', myPath:"/Products"}, {name:'AddNewProducts', myPath:"/AddProduct"}];
-// export default function Header() {
-//   // const DarkMood =  true;
-//   const dispatch = useDispatch();
-//   const darkMode = useSelector((state) => state.darkMode.darkMode);
-//   const login = false;
-//   return (
-//   //   <>
-    
-//   //   <div className={`${darkMode?"bg-slate-900 text-white":""} h-20 beaich gap-18 border-b-2 justify-between`} >
-//   //     <h1 className='float-left text-2xl font-bold'>Exclusive</h1>
-//   //     <div className=''>
-//   //       <ul className='ml-24 mr-10 mt-2'>
-//   //         {Nev.map((item, i) => (
-//   //         <li key={i} className='inline m-1 ml-3 hover:border-b-2 hover:text-gray-500 active:text-gray-500 w-[75px] h-10'>
-//   //          <Link to={item.myPath}>{item.name}</Link> 
-//   //         </li>
-//   //         ))}
-//   //       </ul>
-//   //     </div>
-//   //     <div>
-//   //       <div className={ `  beaich bg-[#F5F5F5] w-60 h-10 float-left inline-block`}>
-//   //         <input type="search" placeholder='What are you looking for ?' className='float-left border-none bg-[#F5F5F5] h-10 w-52'/>
-//   //       <IoSearchSharp className='text-2xl text-black' />
-//   //       </div>
-//   //       <div className='inline-block beaich text-3xl font-extrabold px-2 h-10'>
-//   //       <button onClick={() =>   dispatch(toggleDarkMode())} className='w-8'> {darkMode ?<BsMoonStarsFill /> : <IoSunnyOutline />}</button>
-//   //       <CgProfile />
-//   //       {login && <div className='inline-block beaich text-3xl font-extrabold px-2 h-10'>
-//   //       <MdOutlineShoppingCart />
-//   //       <FaRegHeart />
-//   //       </div>}
-//   //       </div>
-//   //        <div>
-          
-//   //        </div>
-//   //     </div>
-      
-//   //   </div>
-//   // </>
-//   // <>
-//   // <nav
-//   //       className={` flex   items-center  justify-evenly p-6  border-b-2 border-gray-100  transition-colors duration-500 relative ${
-//   //         darkMode ? "darkTheme" : ""
-//   //       } bg-white `}
-//   //     >
-//   //       {/* logo */}
-//   //       <div className="imglogo center ">
-//   //         <Link to={"/"}>
-//   //           {" "}
-            
-//   //         </Link>
-//   //         <Link to={"/"}>
-//   //           {" "}
-//   //           <img
-//   //             className="w-10 xl:hidden 2xl:hidden lg:hidden md:flex sm:flex mobile:flex"
-//   //             src={darkMode ? mdDarkLogo : logomd}
-//   //             alt="logo"
-//   //           />
-//   //         </Link>
-//   //       </div>
-//   //       {/* searchbar */}
-//   //       <div className="  mobile:w-[200px]  md:w-[250px] center lg:w-[250px]  h-[38px] gap-6">
-//   //         <div
-//   //           className={`  sm:w-[400px]  w-[243px] h-[38px] flex gap-2 center  rounded bg-[#F5F5F5] ${
-//   //             darkMode ? "bg-black" : ""
-//   //           }`}
-//   //         >
-//   //           <form
-//   //             onSubmit={submitHandler}
-//   //             className="search   h-6 flex justify-center "
-//   //           >
-//   //             <input
-//   //               className={`outline-none  w-[100%] bg-[#F5F5F5] placeholder:font-normal md:text-base text-xs text-gray-300 ${
-//   //                 darkMode ? "bg-black" : ""
-//   //               } ${darkMode ? "placeholder:text-white" : ""}  ${
-//   //                 darkMode ? "text-white" : ""
-//   //               }`}
-//   //               placeholder="What are looking for"
-//   //               type="search"
-//   //               name="search"
-//   //               id=" searchinp"
-//   //             />
-//   //             <div>
-//   //               <button type="submit">
-//   //                 <CiSearch
-//   //                   className={`${
-//   //                     darkMode ? "text-white" : ""
-//   //                   } text-2xl cursor-pointer font-semibold`}
-//   //                 />
-//   //               </button>
-//   //             </div>
-//   //           </form>
-//   //         </div>
-//   //       </div>
-
-//   //       {/* links */}
-//   //       <div className="link sm:hidden md:hidden mobile:hidden lg:flex xl:flex 2xl:flex ">
-//   //         <ul className="flex  gap-5">
-//   //           {Nev.map((item, i) => {
-//   //             return (
-//   //               <li
-//   //                 className={` ${
-//   //                   darkMode
-//   //                     ? "text-white link-dark-underline link-dark-underline-black"
-//   //                     : ""
-//   //                 }  hover:cursor-pointer`}
-//   //                 key={i}
-//   //               >
-//   //                 <Link
-//   //                   className="link-underline link-underline-black link-underline:hover"
-//   //                   to={item.myPath}
-//   //                 >
-//   //                   {" "}
-//   //                   {item.name}
-//   //                 </Link>
-//   //               </li>
-//   //             );
-//   //           })}
-
-//   //           {logSing ? null : (
-//   //             <>
-//   //               <li className=" hover:cursor-pointer">
-//   //                 <Link
-//   //                   className={`link-underline link-underline-black link-underline:hover ${
-//   //                     darkMode
-//   //                       ? "text-white link-dark-underline link-dark-underline-black"
-//   //                       : ""
-//   //                   } `}
-//   //                   to={"/SiginUp"}
-//   //                 >
-//   //                   SignUp
-//   //                 </Link>
-//   //               </li>
-//   //               <li className=" hover:cursor-pointer ">
-//   //                 <Link
-//   //                   className={`link-underline link-underline-black link-underline:hover ${
-//   //                     darkMode
-//   //                       ? "text-white link-dark-underline link-dark-underline-black"
-//   //                       : ""
-//   //                   } `}
-//   //                   to={"/Login"}
-//   //                 >
-//   //                   Login
-//   //                 </Link>
-//   //               </li>
-//   //             </>
-//   //           )}
-//   //         </ul>
-//   //       </div>
-//   //       <div className="flex justify-center items-center list-none gap-2 mobile:text-xs sm:text-xs">
-//   //         {" "}
-//   //         <li className="2xl:text-2xl xl:text-2xl  lg:text-2xl md:text-xl sm:text-sm mobile:text-sm">
-//   //           <button onClick={() => dispatch(toggleDarkMode())}>
-//   //             {darkMode ? (
-//   //               <IoSunny className="text-lg text-white " />
-//   //             ) : (
-//   //               <IoMoon className="text-lg text-black " />
-//   //             )}
-//   //           </button>
-//   //         </li>
-//   //         {logSing === true ? (
-//   //           <>
-//   //             <li className="hover:text-myTheme 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-xl sm:text-sm mobile:text-sm hover:cursor-pointer">
-//   //               <CiHeart />
-//   //             </li>
-//   //             <li className="hover:text-myTheme 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-xl sm:text-sm mobile:text-sm hover:cursor-pointer">
-//   //            <Link to={"/addCard"}> <MdOutlineShoppingCart /></Link>   
-//   //             </li>
-
-//   //             <li className="w-[30px] h-[30px] rounded-full overflow-hidden">
-//   //               <Link to="/profile">
-//   //                 <img src={mypic} alt="" />
-//   //               </Link>
-//   //             </li>
-//   //           </>
-//   //         ) : (
-//   //           <>
-//   //             <li className="text-myTheme text-2xl hover:cursor-pointer">
-//   //               <Link to={"/profile"}>
-//   //                 <FaUserCircle />
-//   //               </Link>
-//   //             </li>
-//   //           </>
-//   //         )}
-//   //       </div>
-
-//   //       {/* sm screen */}
-
-//   //       {menu ? (
-//   //         <div
-//   //           data-aos="fade-right"
-//   //           className="link top-[70px] bg-white w-[100%] z-10   lg:hidden xl:hidden 2xl:hidden absolute"
-//   //         >
-//   //           <ul className="flex pl-8 flex-col gap-5">
-//   //             {Mylink.map((value, index) => {
-//   //               return (
-//   //                 <li className=" hover:cursor-pointer" key={index}>
-//   //                   <Link
-//   //                     className="link-underline link-underline-black link-underline:hover"
-//   //                     onClick={() => {
-//   //                       setMenu(false);
-//   //                     }}
-//   //                     to={value.path}
-//   //                   >
-//   //                     {" "}
-//   //                     {value.name}
-//   //                   </Link>
-//   //                 </li>
-//   //               );
-//   //             })}
-
-//   //             {logSing === true ? (
-//   //               <>
-//   //                 <li className=" hover:cursor-pointer">
-//   //                   <Link
-//   //                     className="link-underline link-underline-black link-underline:hover"
-//   //                     to={"/SiginUp"}
-//   //                   >
-//   //                     SignUp
-//   //                   </Link>
-//   //                 </li>
-//   //                 {/* <li className="hover:text-myTheme text-2xl hover:cursor-pointer">
-//   //                 <CiHeart />
-//   //               </li>
-//   //               <li className="hover:text-myTheme text-2xl hover:cursor-pointer">
-//   //                 <MdOutlineShoppingCart />
-//   //               </li> */}
-
-//   //                 {/* <li className="w-[30px] h-[35px] rounded-full overflow-hidden">
-//   //                 <img src={mypic} alt="" />
-//   //               </li> */}
-//   //               </>
-//   //             ) : (
-//   //               <>
-//   //                 <li className=" hover:cursor-pointer">
-//   //                   <Link
-//   //                     className="link-underline link-underline-black link-underline:hover"
-//   //                     to={"/SiginUp"}
-//   //                   >
-//   //                     SignUp
-//   //                   </Link>
-//   //                 </li>
-//   //                 <li className=" hover:cursor-pointer">
-//   //                   <Link
-//   //                     className="link-underline link-underline-black link-underline:hover"
-//   //                     to={"/Login"}
-//   //                   >
-//   //                     Login
-//   //                   </Link>
-//   //                 </li>
-//   //                 {/* <li className="hover:text-myTheme text-2xl hover:cursor-pointer">
-//   //                 <FaUserCircle />
-//   //               </li> */}
-//   //               </>
-//   //             )}
-//   //           </ul>
-//   //         </div>
-//   //       ) : null}
-
-//   //       <div className="menu center sm:flex md:flex mobile:flex lg:hidden xl:hidden 2xl:hidden">
-//   //         <button
-//   //           onClick={() => {
-//   //             setMenu(!menu);
-//   //           }}
-//   //         >
-//   //           {menu ? <IoMdClose /> : <MdOutlineMenu />}
-//   //         </button>
-//   //       </div>
-//   //     </nav>
-//   //   </>
-//   )
-// }
-
 import { MdOutlineMenu, MdOutlineShoppingCart } from "react-icons/md";
 import { IoMdClose } from "react-icons/io";
 import { CiSearch, CiHeart } from "react-icons/ci";
@@ -296,6 +8,30 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleDarkMode } from "../store/darkModeSlice";
 import { useNavigate } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css"; 
+import newMarket from '../assets/main-img/new-market.png';
+import shan from '../assets/main-img/shan.jpg';
+
+AOS.init({
+  disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+  startEvent: "DOMContentLoaded", // name of the event dispatched on the document, that AOS should initialize on
+  initClassName: "aos-init", // class applied after initialization
+  animatedClassName: "aos-animate", // class applied on animation
+  useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+  disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+  debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+  throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+  // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+  offset: 120, // offset (in px) from the original trigger point
+  delay: 0, // values from 0 to 3000, with step 50ms
+  duration: 400, // values from 0 to 3000, with step 50ms
+  easing: "ease", // default easing for AOS animations
+  once: false, // whether animation should happen only once - while scrolling down
+  mirror: false, // whether elements should animate out while scrolling past them
+  anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
+});
 
 let Mylink = [
   { name: "Home", path: "/" },
@@ -322,49 +58,45 @@ export default function Header() {
   };
 
   return (
-    <>
-    <div>
-        <p className='bg-black text-white beaich h-10'>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%! <span className='font-extrabold pl-2'>ShopNow</span></p>
+    <div className="w-[100%] h-32">
+      {/* Summer Sale Banner */}
+      <div>
+        <p className="bg-black text-white h-10 flex items-center justify-center">
+          Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!{" "}
+          <span className="font-extrabold pl-2">ShopNow</span>
+        </p>
       </div>
+  
+      {/* Navbar */}
       <nav
-        className={`flex justify-center  items-center p-6 border-b-2 border-gray-100 transition-colors duration-500 relative ${darkMode ? "bg-slate-800" : "text-white"} `}>
+        className={`flex items-center justify-evenly p-6 border-b-2 border-gray-100 transition-colors duration-500 relative ${darkMode ? "bg-slate-800" : "bg-white text-black"}`}
+      >
         {/* Logo */}
-        <div className="imglogo center w-32">
+        <div className="imglogo center">
           <Link to={"/"}>
-          <h1 className={`float-left text-2xl text-black font-bold ${darkMode ? 'text-white': ''}`}>Exclusive</h1>
+            <img className="w-16" src={newMarket} alt="logo" />
           </Link>
         </div>
-
-       
-
+  
         {/* Links */}
-        <div className="hidden ml-4 mr-4 lg:flex items-center gap-5 w-[25%]">
-          <ul className="flex gap-5">
+        <div className="hidden lg:flex items-center gap-5 w-[25%]">
+          <ul className="flex">
             {Mylink.map((value, index) => (
-              <li key={index} className={`hover:cursor-pointer ${darkMode ? 'text-white': ''} text-black`}>
-                <Link
-                  to={value.path}
-                  className="link-underline link-underline-black link-underline:hover"
-                >
+              <li key={index} className={`hover:cursor-pointer p-3 ${darkMode ? 'text-white' : 'text-black'}`}>
+                <Link to={value.path} className="link-underline link-underline-black">
                   {value.name}
                 </Link>
               </li>
             ))}
-            {logSing ? null : (
+            {!logSing && (
               <>
                 <li className="hover:cursor-pointer">
-                  <Link
-                    to={"/SignUp"}
-                    className={`link-underline text-black link-underline-black  ${darkMode ? 'text-white': ''}`}
-                  >
+                  <Link to={"/SignUp"} className={`link-underline ${darkMode ? 'text-white' : 'text-black'}`}>
                     SignUp
                   </Link>
                 </li>
                 <li className="hover:cursor-pointer">
-                  <Link
-                    to={"/Login"}
-                    className={`link-underline text-black link-underline-black  ${darkMode ? 'text-white': ''}`}
-                  >
+                  <Link to={"/Login"} className={`link-underline ${darkMode ? 'text-white' : 'text-black'}`}>
                     Login
                   </Link>
                 </li>
@@ -373,8 +105,7 @@ export default function Header() {
           </ul>
         </div>
 
-         {/* Search Bar */}
-         <div className="flex gap-6 items-center">
+<div className="flex gap-6 items-center">
           <div className={`w-[243px] h-[38px] rounded flex items-center gap-2  ${darkMode ? 'text-white': ''}`}>
             <form onSubmit={submitHandler} className="flex w-full h-6">
               <input
@@ -392,48 +123,47 @@ export default function Header() {
         </div>
 
         {/* Dark Mode Button and Icons */}
-        <div className="flex items-center gap-4 ml-4">
-          <button onClick={() => dispatch(toggleDarkMode())}>
-            {darkMode ? (
-              <IoSunny className="text-lg text-white" />
-            ) : (
-              <IoMoon className="text-lg text-black " />
-            )}
-          </button>
-
-          {logSing && (
+        <div className="flex w-28 justify-center items-center list-none gap-2 mobile:text-xs sm:text-xs">
+          <li className="2xl:text-2xl xl:text-2xl lg:text-2xl md:text-xl sm:text-sm mobile:text-sm">
+            <button onClick={() => dispatch(toggleDarkMode())}>
+              {darkMode ? <IoSunny className="text-lg text-white" /> : <IoMoon className="text-lg text-black" />}
+            </button>
+          </li>
+          {logSing ? (
             <>
-              <CiHeart className={`text-2xl text-black cursor-pointer hover:text-gray  ${darkMode ? 'text-white': ''}`} />
-              <Link to="/AddToCard">
-                <MdOutlineShoppingCart className={`text-2xl text-black cursor-pointer hover:text-gray  ${darkMode ? 'text-white': ''}`} />
-              </Link>
-              <div className="w-[30px] h-[30px] rounded-full overflow-hidden">
-                <Link to="/Profile">
-                  <img src="/path/to/your/image.jpg" alt="Profile" />
+              <li className="hover:text-myTheme 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-xl sm:text-sm mobile:text-sm hover:cursor-pointer">
+                <CiHeart className={`${darkMode ? "bg-black text-white rounded-full font-extrabold text-2xl p-1" : "text-black bg-transparent"}`} />
+              </li>
+              <li className="hover:text-myTheme 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-xl sm:text-sm mobile:text-sm hover:cursor-pointer">
+                <Link to={"/addCard"}>
+                  <MdOutlineShoppingCart className={`${darkMode ? "bg-black text-white rounded-full font-bold p-1" : "text-black bg-transparent"}`} />
                 </Link>
-              </div>
+              </li>
+              <li className="w-[30px] h-[30px] rounded-full overflow-hidden">
+                <Link to="/profile">
+                  <img src={shan} alt="Profile" />
+                </Link>
+              </li>
             </>
-          )}
-
-          {!logSing && (
-            <Link to="/profile">
-              <FaUserCircle className="text-2xl cursor-pointer hover:text-myTheme" />
-            </Link>
+          ) : (
+            <li className="text-myTheme text-2xl hover:cursor-pointer">
+              <Link to={"/profile"}>
+                <FaUserCircle />
+              </Link>
+            </li>
           )}
         </div>
-
-        {/* Mobile Menu */}
+  
+        {/* Mobile Menu Toggle */}
         <div className="lg:hidden">
           <button onClick={() => setMenu(!menu)} className="text-2xl text-black">
             {menu ? <IoMdClose /> : <MdOutlineMenu />}
           </button>
         </div>
-
+  
+        {/* Mobile Menu Items */}
         {menu && (
-          <div
-            data-aos="fade-right"
-            className="absolute top-[70px] left-0 w-full bg-white z-10 lg:hidden"
-          >
+          <div className="absolute top-[70px] left-0 w-full bg-white z-10 lg:hidden">
             <ul className="flex flex-col gap-5 pl-8 py-4">
               {Mylink.map((value, index) => (
                 <li key={index}>
@@ -446,17 +176,13 @@ export default function Header() {
                   </Link>
                 </li>
               ))}
-              {logSing && (
+              {!logSing && (
                 <>
                   <li>
                     <Link to="/SignUp" className="link-underline link-underline-black">
                       SignUp
                     </Link>
                   </li>
-                </>
-              )}
-              {!logSing && (
-                <>
                   <li>
                     <Link to="/Login" className="link-underline link-underline-black">
                       Login
@@ -468,8 +194,6 @@ export default function Header() {
           </div>
         )}
       </nav>
-    </>
+    </div>
   );
-}
-
-
+}  

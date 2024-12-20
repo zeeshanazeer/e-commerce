@@ -1,12 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import dfood from "../assets/card-img/Dfood.png"
-import shooz from "../assets/card-img/shooz.png"
-import gjekit from "../assets/card-img/Gjekit.png"
-import ispiker from "../assets/card-img/ispiker.png"
-import laptop from "../assets/card-img/laptop.png"
-import remont from "../assets/card-img/remont.png"
-import soodkas from "../assets/card-img/soodkas.png"
-import toicar from "../assets/card-img/toicar.png"
 import heart from "../assets/card-icon/heart.svg"
 import view from "../assets/card-icon/view.svg"
 import star from "../assets/card-icon/star.svg"
@@ -80,7 +72,7 @@ function Card(props){
 }
 
 const pro = [
-  { name: 'View All Products', myPath: '/AllProducts' }
+  { name: 'View All Products', myPath: '/Products' }
 ];
 
 function ThirdCard() {
