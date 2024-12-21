@@ -46,41 +46,45 @@ function Home() {
             darkMode ? "bg- rounded mx-12 py-2" : ""
           } flex justify-center items-center 2xl:flex-row xl:flex-row lg:flex-row md:flex-row sm:flex-col mobile:flex-col gap-5 my-10 border-b-gray-100`}
         >
+          <div className="flex gap-5">
           <div
             data-aos="flip-right"
-            className="2xl:w-40 xl:w-40 md:w-28  cursor-none"
+            className=" sm:w-28 w-[100px] cursor-none"
           >
             <img src={phone} alt="" />
           </div>
           <div
             data-aos="flip-right"
-            className="2xl:w-40 xl:w-40 md:w-28  cursor-none"
+            className="sm:w-28 w-[100px]  cursor-none"
           >
             <img src={computer} alt="" />
           </div>
+          </div>
+          <div className="flex gap-5">
           <div
             data-aos="flip-right"
-            className="2xl:w-40 xl:w-40 md:w-28  cursor-none"
+                     className=" sm:w-28 w-[100px] cursor-none"
           >
             <img src={watch} alt="" />
           </div>
           <div
             data-aos="flip-right"
-            className="2xl:w-40 xl:w-40 md:w-28  cursor-none"
+                    className=" sm:w-28 w-[100px] cursor-none"
           >
             <img src={camera} alt="" />
           </div>
+          </div>
+          <div className="flex gap-5">
           <div
             data-aos="flip-right"
-            className="2xl:w-40 xl:w-40 md:w-28  cursor-none"
-          >
+            className=" sm:w-28 w-[100px] cursor-none"          >
             <img src={headphone} alt="" />
           </div>
           <div
             data-aos="flip-right"
-            className="2xl:w-40 xl:w-40 md:w-28  cursor-none"
-          >
+            className=" sm:w-28 w-[100px] cursor-none"          >
             <img src={game} alt="" />
+          </div>
           </div>
         </div>
       </div>

@@ -68,7 +68,7 @@ export default function Header() {
       </div>
   
       {/* Navbar */}
-      <nav
+     <nav
         className={`flex items-center justify-evenly p-6 border-b-2 border-gray-100 transition-colors duration-500 relative ${darkMode ? "bg-slate-800" : "bg-white text-black"}`}
       >
         {/* Logo */}
@@ -105,22 +105,29 @@ export default function Header() {
           </ul>
         </div>
 
-<div className="flex gap-6 items-center">
-          <div className={`w-[243px] h-[38px] rounded flex items-center gap-2  ${darkMode ? 'text-white': ''}`}>
-            <form onSubmit={submitHandler} className="flex w-full h-6">
-              <input
-                className={` ${darkMode ? 'text-white': ''}text-black w-full outline-none bg-transparent placeholder:font-normal text-xs md:text-base text-gray-300`}
-                placeholder="What are you looking for?"
-                type="search"
-                name="search"
-                id="searchinp"
-              />
-              <button type="submit" className="text-2xl cursor-pointer">
-                <CiSearch className={` ${darkMode ? 'text-white': ''} text-black`} />
-              </button>
-            </form>
-          </div>
-        </div>
+        <div className="mobile:w-full md:w-[150px] lg:w-[150px] h-[30px] gap-6">
+  <div
+    className={`sm:w-[200px] w-full h-[32px] p-1 flex gap-2 center rounded bg-[#F5F5F5] ${darkMode ? "bg-black" : ""}`}
+  >
+    <form onSubmit={submitHandler} className="search h-6 flex justify-center w-full">
+      <input
+        className={`outline-none bg-[#F5F5F5] placeholder:font-normal md:text-base text-xs text-gray-300 ${darkMode ? "bg-black" : ""} ${darkMode ? "placeholder:text-white" : ""} ${darkMode ? "text-white" : ""} w-full`}
+        placeholder="What are you looking for"
+        type="search"
+        name="search"
+        id="searchinp"
+      />
+      <div>
+        <button type="submit">
+          <CiSearch
+            className={`${darkMode ? "text-white" : ""} text-2xl cursor-pointer font-semibold`}
+          />
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
 
         {/* Dark Mode Button and Icons */}
         <div className="flex w-28 justify-center items-center list-none gap-2 mobile:text-xs sm:text-xs">
