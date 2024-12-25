@@ -97,10 +97,9 @@
 
 // export default Search;
 
-import heart from "../assets/card-icon/heart.svg";
-import view from "../assets/card-icon/view.svg";
-import star from "../assets/card-icon/star.svg";
-import cStar from "../assets/card-icon/color-star.svg";
+import { MdOutlineRemoveRedEye } from "react-icons/md";
+import { CiHeart } from "react-icons/ci";
+import ReactStars from 'react-stars';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'; // Ensure you have axios imported for API calls
 import { useSelector } from 'react-redux';
@@ -123,8 +122,8 @@ function Card({ off, image, del, name, price, id, value }) {
               className="m-auto group-hover:scale-110 transition-all duration-300 mt-10"
             />
             <div className='absolute ml-56'>
-              <img src={heart} alt="" /> 
-              <img src={view} alt="" />
+              <CiHeart/> 
+              <MdOutlineRemoveRedEye/>
             </div>
           </div>
         </div>
@@ -143,14 +142,24 @@ function Card({ off, image, del, name, price, id, value }) {
             <span className='text-red-600'>{price}</span> 
             <span className='line-through'>{del}</span>
           </p>
-          <p className='m-0'>
-            <img src={cStar} alt="" className='inline-block'/>
-            <img src={cStar} alt="" className='inline-block'/>
-            <img src={cStar} alt="" className='inline-block'/>
-            <img src={cStar} alt="" className='inline-block'/>
-            <img src={star} alt="" className='inline-block' />
-            {value}
-          </p>
+          <div className="star-img sm:block hidden  bg-amber- ">
+            <ReactStars
+              count={5}
+              value={value || 3}
+              size={24}
+              edit={false}
+              color2={"#ffd700"}
+            />
+          </div>
+          <div className="star-img sm:hidden block bg-amber- ">
+            <ReactStars
+              count={5}
+              value={value || 3}
+              size={12}
+              edit={false}
+              color2={"#ffd700"}
+            />
+          </div>
         </div>
       </div>
     </Link>

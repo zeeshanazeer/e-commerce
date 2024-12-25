@@ -1,19 +1,12 @@
 import React from 'react';
 import Page from '../component/page';
 import AddCard from '../component/cards';
-import List from '../component/list';
 import Second from '../component/seacond';  // Renamed from 'Seacond'np to 'Second'
 import Isticar from '../component/isticar';
 import ThirdCard from '../component/ThirdCard';
 import Grid from '../component/Grid';
 // import Products from './Products';  // Ensure you're using this somewhere if necessary
 import { useSelector } from 'react-redux';
-import watch from "../assets/card-icon/icon-smart.png"
-import camera from "../assets/card-icon/iconcamera.png"
-import game from "../assets/card-icon/icongame.png"
-import headphone from "../assets/card-icon/iconhead.png"
-import computer from "../assets/card-icon/iconcomputer.png"
-import phone from "../assets/card-icon/iconphone.png"
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -49,41 +42,43 @@ function Home() {
           <div className="flex gap-5">
           <div
             data-aos="flip-right"
-            className=" sm:w-28 w-[100px] cursor-none"
-          >
-            <img src={phone} alt="" />
+            className=" sm:w-28 w-[100px] cursor-none border-2">
+            <img src="https://i.imghippo.com/files/Bwxy2435Fts.png" alt=""  className='mx-auto'/>
+            <p className='justify-center items-center flex'>Smarth Phone</p>
           </div>
           <div
             data-aos="flip-right"
-            className="sm:w-28 w-[100px]  cursor-none"
-          >
-            <img src={computer} alt="" />
+            className="sm:w-28 w-[100px]  cursor-none border-2">
+            <img src="https://i.imghippo.com/files/GnLa8091yDo.png" alt="" className='mx-auto' />
+            <p className='justify-center items-center flex'>Computer</p>
           </div>
           </div>
           <div className="flex gap-5">
           <div
             data-aos="flip-right"
-                     className=" sm:w-28 w-[100px] cursor-none"
-          >
-            <img src={watch} alt="" />
+            className=" sm:w-28 w-[100px] cursor-none border-2 className='mx-auto'">
+            <img src="https://i.imghippo.com/files/Ldt5574Gs.png" alt="" className='mx-auto' />
+            <p className='justify-center items-center flex'>Smarth Watch</p>
           </div>
           <div
             data-aos="flip-right"
-                    className=" sm:w-28 w-[100px] cursor-none"
-          >
-            <img src={camera} alt="" />
+            className=" sm:w-28 w-[100px] cursor-none border-2">
+            <img src="https://i.imghippo.com/files/niVt6682NK.png" alt=""  className='mx-auto'/>
+            <p className='justify-center items-center flex'>Camera</p>
           </div>
           </div>
           <div className="flex gap-5">
           <div
             data-aos="flip-right"
-            className=" sm:w-28 w-[100px] cursor-none"          >
-            <img src={headphone} alt="" />
+            className=" sm:w-28 w-[100px] cursor-none border-2">
+            <img src="https://i.imghippo.com/files/XAwC7858As.png" alt="" className='mx-auto' />
+            <p className='justify-center items-center flex'>Head Phone</p>
           </div>
           <div
             data-aos="flip-right"
-            className=" sm:w-28 w-[100px] cursor-none"          >
-            <img src={game} alt="" />
+            className=" sm:w-28 w-[100px] cursor-none border-2">
+            <img src="https://i.imghippo.com/files/PGT9405maE.png" alt="" className='mx-auto' />
+            <p className='justify-center items-center flex'>Game</p>
           </div>
           </div>
         </div>

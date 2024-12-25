@@ -1,9 +1,9 @@
 import React from 'react'
-import speeker from '../assets/main-img/speeker.png'
 
 function Ist(){
   return(
-    <div className='bg-black w-[82%] h-[344px] beaich'>
+    <>
+    <div className='bg-slate-800 p-20 h-[450px] flex justify-center items-center mt-10  2xl:hidden xl:flex lg:hidden md:hidden sm:hidden mobile:hidden'>
                 <div className='w-[50%] px-14 float-left mb-24'>
                     <div className='h-20'>
                         <div className='block'>
@@ -20,9 +20,14 @@ function Ist(){
                     </div>
                 </div>
                 <div className='w-[50%] mt-5'>
-                    <img src={speeker} alt="" />
+                    <img src="https://i.imghippo.com/files/pRTZ9778AM.png" alt="" />
                 </div>
             </div>
+            <div className="container mx-auto my-2   2xl:flex xl:hidden lg:flex md:flex sm:flex mobile:flex ">
+                    <img className="container mx-auto rounded-xl cursor-none darkTheme" src="https://i.imghippo.com/files/WSbv9649nU.png" alt="" />
+            </div> 
+            
+            </>
   )
 }
 

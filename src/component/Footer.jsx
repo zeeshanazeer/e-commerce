@@ -1,6 +1,4 @@
 import React from 'react'
-import icon from "../assets/card-icon/icons.png"
-import sken from "../assets/card-icon/skenar.png"
 
 function Footer() {
   return (
@@ -82,10 +80,10 @@ function Footer() {
           <li>
           </li>
           <li>
-            <a className="hover:text-gray-600 text-white"><img src={sken} alt="" /></a>
+            <a className="hover:text-gray-600 text-white"><img src='https://i.imghippo.com/files/CGgd4078KU.png' alt="" /></a>
           </li>
           <li>
-            <a className="hover:text-gray-600 text-white"><img src={icon} alt="" /></a>
+            <a className="hover:text-gray-600 text-white"><img src='https://i.imghippo.com/files/oYR9111I.png' alt="" /></a>
           </li>
         </nav>
       </div>

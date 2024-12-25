@@ -1,11 +1,9 @@
 import React from 'react'
-import main from '../assets/main-img/main.jfif'
-import about from '../assets/main-img/about.webp'
 
 function Main(){
   return(
     <div className='w-[80%]'>
-      <img src={about} alt="" className='w-[100%] h-[550px] mt-10 mb-10' />
+      <img src='https://i.imghippo.com/files/kwNP6168ts.webp' alt="" className='w-[100%] h-[550px] mt-10 mb-10' />
     </div>
   )
 }
@@ -53,7 +51,7 @@ function PageAbout() {
         <Main/>
       </div>
     <div className='beaich'>
-     <Page image={main}
+     <Page image='https://i.imghippo.com/files/kwNP6168ts.webp'
       para="Video is the future of business in this digital-focuse world.
       Vidyard uses video to change the way companies connect and 
       communicate. We help organizations of all size humanize their

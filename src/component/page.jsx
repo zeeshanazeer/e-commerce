@@ -1,12 +1,12 @@
 import React from 'react'
-import phone from '../assets/main-img/iPhone.png'
-import phones from '../assets/main-img/phone.png'
-import apple from '../assets/main-img/apple.png'
 import { FaArrowRight } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 import AOS from "aos";
-import "aos/dist/aos.css"; // You can also use <link> for styles
-// ..
+import "aos/dist/aos.css"; 
+import { FaApple } from "react-icons/fa";
+
+
+
 AOS.init({
   disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
   startEvent: "DOMContentLoaded", // name of the event dispatched on the document, that AOS should initialize on
@@ -33,10 +33,10 @@ export default function Page() {
     const darkMode = useSelector((state) => state.darkMode.darkMode);
   return (
   <>
-      <div className={` flex justify-center items-center  2xl:hidden xl:flex lg:hidden md:hidden sm:hidden mobile:hidden`}>
+      <div className={` flex justify-center items-center mt-10  2xl:hidden xl:flex lg:hidden md:hidden sm:hidden mobile:hidden`}>
         <div
           id="heroMain"
-          className=" w-[100%] h-[500px] 2xl:flex-row xl:flex-row lg:flex-col md:flex-col sm:flex-col mobile:flex-col flex mb-7 md:h-auto sm:h-auto mobile:h-auto  sm:mb-7 "
+          className=" w-[100%] h-[300px] 2xl:flex-row xl:flex-row lg:flex-col md:flex-col sm:flex-col mobile:flex-col flex mb-7 md:h-auto sm:h-auto mobile:h-auto  sm:mb-7 "
         >
           <div className=" 2xl:w-[30%] md:hidden sm:hidden mobile:hidden lg:flex 2xl:felx xl:flex   xl:w-[30%] lg:w-[100%] md:w-[100%]   sm:w-[100%] mobile:w-[100%] center 2xl:pl-[120px] xl:pl-[110px]   border-r ">
             <div
@@ -72,10 +72,8 @@ export default function Page() {
                     className="flex  items-center gap-[24px] sm:gap-2 mobile:gap-2"
                   >
                     <div>
-                      <img
-                        className="mx-auto 2xl:w-10 xl:w-10 lg:w-10 sm:w-6 md:w-6 mobile:w-4 2xl:h-12 xl:h-12 lg:h-12 md:h-7 sm:h-7 mobile:h-4"
-                        src={apple}
-                        alt=""
+                      <FaApple
+                        className="text-white mx-auto 2xl:w-10 xl:w-10 lg:w-10 sm:w-6 md:w-6 mobile:w-4 2xl:h-12 xl:h-12 lg:h-12 md:h-7 sm:h-7 mobile:h-4"
                       />
                     </div>
                     <h5 className="font-normal 2xl:text-base  xl:text-base lg:text-base sm:text-xs md:text-xs mobile:text-[5px] text-white">
@@ -105,7 +103,7 @@ export default function Page() {
                 >
                   <img
                     className="2xl:w-[496px] xl:w-[496px] 2xl:h-[320px] xl:h-[320px] lg:w-[250px] md:w-[200px]  sm:w-[200px] mobile:w-[100px]  "
-                    src={phone}
+                    src="https://i.imghippo.com/files/ANv4832AWU.png"
                     alt=""
                   />
                 </div>
@@ -116,7 +114,7 @@ export default function Page() {
         </div>
       </div>
       <div className="container mx-auto my-2   2xl:flex xl:hidden lg:flex md:flex sm:flex mobile:flex ">
-        <img className="container mx-auto rounded-xl cursor-none darkTheme" src={phones} alt="" />
+        <img className="container mx-auto rounded-xl cursor-none darkTheme" src="https://i.imghippo.com/files/OeZ5666SAs.png" alt="" />
       </div>
     </>
   )

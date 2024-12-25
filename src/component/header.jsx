@@ -10,8 +10,6 @@ import { toggleDarkMode } from "../store/darkModeSlice";
 import { useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css"; 
-import newMarket from '../assets/main-img/new-market.png';
-import shan from '../assets/main-img/shan.jpg';
 
 AOS.init({
   disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
@@ -74,7 +72,7 @@ export default function Header() {
         {/* Logo */}
         <div className="imglogo center">
           <Link to={"/"}>
-            <img className="w-16" src={newMarket} alt="logo" />
+            <img className="w-16" src="https://i.imghippo.com/files/lFVw6430ySw.png" alt="logo" />
           </Link>
         </div>
   
@@ -142,13 +140,13 @@ export default function Header() {
                 <CiHeart className={`${darkMode ? "bg-black text-white rounded-full font-extrabold text-2xl p-1" : "text-black bg-transparent"}`} />
               </li>
               <li className="hover:text-myTheme 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-xl sm:text-sm mobile:text-sm hover:cursor-pointer">
-                <Link to={"/addCard"}>
+                <Link to={"/AddToCard"}>
                   <MdOutlineShoppingCart className={`${darkMode ? "bg-black text-white rounded-full font-bold p-1" : "text-black bg-transparent"}`} />
                 </Link>
               </li>
               <li className="w-[30px] h-[30px] rounded-full overflow-hidden">
                 <Link to="/profile">
-                  <img src={shan} alt="Profile" />
+                  <img src="https://i.imghippo.com/files/spe3216xYQ.jpg" alt="Profile" />
                 </Link>
               </li>
             </>
